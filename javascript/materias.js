@@ -186,7 +186,7 @@ recorrerDependencias();
 function cargarDatos(){
     const exoneradas = [
         calculoDiv, gal1, matDiscreta1, calculoDivv, gal2, matDiscreta2,
-        prog1, logica, pye, prog2, prog4, tallerProg, economia, teoleng
+        prog1, logica, pye, prog2, prog3,prog4, tallerProg, economia, teoleng
     ];
 
     exoneradas.forEach(elemento => {
@@ -194,7 +194,7 @@ function cargarDatos(){
     });
 
     const aprobadas = [
-        metNum, iio, arquitectura, prog3
+        metNum, iio, arquitectura
     ];
 
     aprobadas.forEach(elemento => {
