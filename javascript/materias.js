@@ -156,7 +156,7 @@ const recorrerDependencias = () => {
         if (habilitada && btn.disabled) {
             btn.disabled = false;
             btn.setAttribute("estado","sin-cursar");
-        } else if (!habilitada && !btn.classList.contains("disabled")) {
+        } else if (!habilitada && !btn.disabled) {
             btn.disabled = true;
         }
     });
@@ -165,8 +165,6 @@ const recorrerDependencias = () => {
 // Asignar eventos de click a cada botón
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        // Cambiar el estado del botón
-        if(btn.classList.contains("disabled"))return;
 
         if (btn.getAttribute("estado") === "sin-cursar" || btn.getAttribute("estado")  == null) {
             btn.setAttribute("estado","aprobada"); 
@@ -177,13 +175,12 @@ document.querySelectorAll('.btn').forEach(btn => {
             btn.setAttribute("estado","sin-cursar"); 
         }
 
-        // Actualizar créditos y dependencias
         actualizarCreditos();
         recorrerDependencias();
     });
 });
 
-// Inicializar estado y dependencias
+
 recorrerDependencias();
 
 function cargarDatos(){
@@ -211,13 +208,8 @@ function cargarDatos(){
 }
 
 function actualizarClase(elemento, agregarClase) {
-   
-        
         elemento.disabled = false;
-        elemento.classList.remove("sin-cursar");
-       
-        elemento.classList.add(agregarClase);//agrego el nuevo estado como clase
-        elemento.setAttribute("estado",agregarClase);  //agrego el nuevo estado como estado
+        elemento.setAttribute("estado",agregarClase);
     
 }
 
