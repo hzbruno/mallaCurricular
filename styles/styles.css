@@ -1,0 +1,162 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f5;
+}
+.menu {
+    background-color: #4a69bd;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.bloque-header {
+    background-color: #1e3799;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    
+}
+#creditos {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white;
+    
+    background-color: #1e3799;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    align-self: center;
+}
+
+.separator {
+    height: 30px;
+    background-color: #1e3799;
+    border-radius: 15px;
+    margin: 30px auto; 
+    width: 90%;
+    display: flex;
+    justify-content: center; 
+}
+
+#opcionales{
+    background-color: #d8d8d8;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: end;
+}
+
+#opcionales b{
+    font-size: 1em;
+    color: #333;
+}
+
+#analista{
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+#titleReq{
+    font-size: 2em;
+}
+
+#analistaMaterias{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 30px auto; 
+    justify-content: center; 
+
+}
+
+#analistaMaterias p{
+   background-color: #1e3799;
+   margin: 5px;
+   padding: 10px;
+   border-radius: 20px;
+   color: white;
+
+}
+
+#ok{
+    background-color: #1e3799;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+}
+
+
+#obligatorias{
+    background-color: #cacaca;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: end;
+}
+
+
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.btn {
+    padding: 15px 25px;
+    font-size: 1em;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn:hover {
+    transform: scale(1.05);
+}
+.btn[estado="aprobada"] {
+    background-color: #38ada9;
+    color: white;
+}
+.btn[estado="exonerada"] {
+    background-color: #0ecf2e;
+    color: white;
+}
+.btn[estado="sin-cursar"]{
+    background-color: #e55039;
+    color: white;
+}
+.btn:disabled {
+    background-color: #8395a7;
+    color: white;
+    cursor: not-allowed;
+}
+#cargarDatos{
+    padding: 15px 25px;
+    font-size: 1em;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color:#1e3799;
+    color:white;
+}
+
+
+
+.footer {
+    background-color: #1e3799;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    position: relative;
+}
