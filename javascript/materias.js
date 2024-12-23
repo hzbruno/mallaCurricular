@@ -96,12 +96,12 @@ const dependenciasCombinadas = {
         "exoneradas": []
     },
     "intProgFuncional": {
-        "aprobadas": ["teoleng", "prog2"],
-        "exoneradas": []
+        "aprobadas": [],
+        "exoneradas": ["prog2","matDiscreta1","logica","teoleng"]
     },
     "P.I.S": {
-        "aprobadas": ["iio", "progLogica", "prog3"],
-        "exoneradas": ["prog4", "logica", "calculoDivv"]
+        "aprobadas": ["ingSoft"],
+        "exoneradas": ["prog4"]
     },
     "adminGI":{
         "aprobadas": [],
