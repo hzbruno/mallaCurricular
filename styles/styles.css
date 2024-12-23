@@ -160,3 +160,42 @@ body {
     width: 100%;
     position: relative;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .bloque-header {
+        padding: 20px;
+        font-size: 1.5em;
+    }
+
+    #creditos {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    #titleReq {
+        font-size: 1.5em;
+    }
+
+    #analistaMaterias {
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    #cargarDatos {
+        font-size: 1.4em;
+        padding: 10px 15px;
+    }
+
+    .row {
+
+    }
+
+    .bloque-header h1{
+        font-size: 1em;
+    }
+}
