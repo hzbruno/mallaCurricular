@@ -238,4 +238,9 @@ body {
         width: 100vw;
         margin-left: 20px;
     }
+    
+    .separator{
+        width: 100vw;
+        margin-left: 20px;
+    }
 }
