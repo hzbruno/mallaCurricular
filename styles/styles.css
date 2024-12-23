@@ -106,6 +106,7 @@ body {
 .row {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
 }
 .btn {
@@ -171,7 +172,7 @@ body {
     .bloque-header {
         padding: 20px;
         font-size: 1.5em;
-        width: 100%;
+        width: 100vw;
     }
 
     #creditos {
@@ -194,6 +195,8 @@ body {
     .btn {
         font-size: 1em;
         padding: 8px;
+        width: 8em;
+        height: 6em;
     }
 
     #cargarDatos {
@@ -201,9 +204,6 @@ body {
         padding: 10px 15px;
     }
 
-    .row {
-
-    }
 
     .bloque-header h1{
         font-size: 1em;
@@ -227,5 +227,15 @@ body {
         padding: 20px;
         width: 100vw;
         height: auto;
+    }
+
+    #analista{
+        align-items: center;
+        width: 100vw;
+    }
+
+    #boton{
+        width: 100vw;
+        margin-left: 20px;
     }
 }
