@@ -155,8 +155,9 @@ body {
 .footer {
     background-color: #1e3799;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-top: 30px;
     width: 100%;
     position: relative;
@@ -172,13 +173,12 @@ body {
     .bloque-header {
         padding: 20px;
         font-size: 1.5em;
-        width: 100vw;
+        
     }
 
     #creditos {
         font-size: 1.2em;
         border-radius: 0px;
-        width: 100vw;
         height: auto;
         margin-top: -5px;
         background-color: #1a2e80;
@@ -218,29 +218,29 @@ body {
     #obligatorias{
         border-radius: 0px;
         padding: 20px;
-        width: 100vw;
         height: auto;
     }
 
     #opcionales{
         border-radius: 0px;
         padding: 20px;
-        width: 100vw;
+
         height: auto;
     }
 
     #analista{
         align-items: center;
-        width: 100vw;
+
     }
 
     #boton{
-        width: 100vw;
+        display: flex;
+        justify-content: center;
         margin-left: 20px;
     }
     
     .separator{
-        width: 100vw;
+
         margin-left: 20px;
     }
 }
