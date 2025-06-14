@@ -114,6 +114,10 @@ const dependenciasCombinadas = {
     "polCient":{
         "aprobadas": [],
         "exoneradas": []
+    },
+    "cts":{
+        "aprobadas": [],
+        "exoneradas": []
     }
 
 };
