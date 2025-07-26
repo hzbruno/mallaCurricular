@@ -1,178 +1,172 @@
+/* Estilo base */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f5;
+    background-color: #cfcfcf;
+    color: #333;
 }
+
 .menu {
-    background-color: #4a69bd;
+    background-color: #1e3a8a;
     color: white;
-    padding: 15px;
+    padding: 16px;
     text-align: center;
     font-size: 1.2em;
+    font-weight: 500;
 }
+
 .bloque-header {
-    background-color: #1e3799;
+    background-color: #1e3a8a;
     color: white;
-    padding: 30px;
+    padding: 5px 20px;
     text-align: center;
+    font-size: 1em;
+    font-weight: bold;
 }
+
 .container {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-    
 }
+
 #creditos {
     font-size: 1.5em;
-    margin-bottom: 20px;
+    background-color: #1e3a8a;
     color: white;
-    
-    background-color: #1e3799;
-    border-radius: 15px;
+    border-radius: 12px;
     padding: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    align-self: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .separator {
     height: 30px;
-    background-color: #1e3799;
-    border-radius: 15px;
-    margin: 30px auto; 
+    background-color: #1e3a8a;
+    border-radius: 10px;
+    margin: 40px auto;
     width: 90%;
-    display: flex;
-    justify-content: center; 
 }
 
-#opcionales{
-    background-color: #d8d8d8;
-    border-radius: 15px;
+#opcionales, #obligatorias {
+    background-color: #dfdfdf;
+    border: #cccccc solid .1em;
+    border-radius: 12px;
     padding: 20px;
-    text-align: end;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px #0000000d;
+
 }
 
-#opcionales b{
-    font-size: 1em;
-    color: #333;
+#opcionales b, #obligatorias b {
+    font-size: 1.05em;
+    color: #111827;
 }
 
-#analista{
-    border-radius: 15px;
+#analista {
+    border-radius: 12px;
     padding: 20px;
     text-align: center;
 }
 
-#titleReq{
+#titleReq {
     font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-#analistaMaterias{
+#analistaMaterias {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
     width: 80%;
-    margin: 30px auto; 
-    justify-content: center; 
-
 }
 
-#analistaMaterias p{
-   background-color: #1e3799;
-   margin: 5px;
-   padding: 10px;
-   border-radius: 20px;
-   color: white;
-
-}
-
-#ok{
-    background-color: #1e3799;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 20px;
+#analistaMaterias p, #ok {
+    background-color: #1e3a8a;
     color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 0.95em;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-
-
-#obligatorias{
-    background-color: #cacaca;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: end;
-}
-
-
 
 .row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
 }
+
 .btn {
     padding: 15px 25px;
     font-size: 1em;
     margin: 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
+
 .btn:hover {
     transform: scale(1.05);
 }
+
 .btn[estado="aprobada"] {
-    background-color: #38ada9;
+    background-color: #1091b9;
     color: white;
 }
+
 .btn[estado="exonerada"] {
-    background-color: #0ecf2e;
+    background-color: #22c55e;
     color: white;
 }
-.btn[estado="sin-cursar"]{
-    background-color: #e55039;
+
+.btn[estado="sin-cursar"] {
+    background-color: #e92b2b;
     color: white;
 }
+
 .btn:disabled {
-    background-color: #8395a7;
+    background-color: #9ca3af;
     color: white;
     cursor: not-allowed;
 }
-#cargarDatos{
-    padding: 15px 25px;
-    font-size: 1em;
-    margin: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s;
-    background-color:#1e3799;
-    color:white;
-}
 
-
-
-.footer {
-    background-color: #1e3799;
+#cargarDatos {
+    background-color: #1e3a8a;
     color: white;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 30px;
-    width: 100%;
-    position: relative;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    transition: background-color 0.2s;
+    border:none;
 }
 
+#cargarDatos:hover {
+    background-color: #1d4ed8;
+}
 #creditosArea {
-    background-color: #f0f0f5;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px 25px;
     margin: 20px auto;
-    width: 95%;
-    max-width: 1000px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
+
+    background-color: #dfdfdf;
+    border: #cccccc solid .1em;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px #0000000d;
+    
 }
 
 #creditosArea h2 {
@@ -198,7 +192,7 @@ body {
     display: inline-block;
     font-size: 1rem;
     font-weight: bold;
-    color: #0d9488;
+    color: #4260c5;
     margin: 5px 0;
 }
 
@@ -211,29 +205,33 @@ body {
 
 #analistaR{
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 
 
-/* Media Queries for Responsive Design */
+
+/* Footer */
+.footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 0.95em;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-
-    body{
-        align-items: center;
-    }
-
     .bloque-header {
-        padding: 20px;
         font-size: 1.5em;
-        
+        padding: 20px;
     }
 
     #creditos {
         font-size: 1.2em;
-        border-radius: 0px;
-        height: auto;
-        margin-top: -5px;
-        background-color: #1a2e80;
+        padding: 15px;
     }
 
     #titleReq {
@@ -242,57 +240,29 @@ body {
 
     #analistaMaterias {
         width: 100%;
+        padding: 0 10px;
     }
 
     .btn {
+        width: 100%;
+        padding: 12px;
         font-size: 1em;
-        padding: 8px;
-        width: 8em;
-        height: 6em;
     }
 
     #cargarDatos {
-        font-size: 1.4em;
-        padding: 10px 15px;
-    }
-
-
-    .bloque-header h1{
         font-size: 1em;
+        padding: 10px 20px;
     }
 
-    .container {
-        padding: 0px;
-        max-width: 100%;
-        margin: 0px;
+    #creditosArea {
+        padding: 15px;
     }
 
-    #obligatorias{
-        border-radius: 0px;
-        padding: 20px;
-        height: auto;
+    #creditosArea h2 {
+        font-size: 1.5rem;
     }
 
-    #opcionales{
-        border-radius: 0px;
-        padding: 20px;
-
-        height: auto;
-    }
-
-    #analista{
-        align-items: center;
-
-    }
-
-    #boton{
-        display: flex;
-        justify-content: center;
-        margin-left: 20px;
-    }
-    
-    .separator{
-
-        margin-left: 20px;
+    #creditosArea h3 {
+        font-size: 1rem;
     }
 }
