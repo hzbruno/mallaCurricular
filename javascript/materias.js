@@ -118,20 +118,64 @@ const dependenciasCombinadas = {
     "cts":{
         "aprobadas": [],
         "exoneradas": []
+    },
+    "dlogico":{
+        "aprobadas": [],
+        "exoneradas": []
+    },
+
+    "intmicro":{
+        "aprobadas": [],
+        "exoneradas": []
     }
 
 };
 
-// Actualizar créditos
 const actualizarCreditos = () => {
     let totalCreditos = 0;
+
+    // Mapeo para acumular créditos por área
+    const creditosPorArea = {
+        mate: 0,
+        ciencias: 0,
+        prog: 0,
+        arqsisr: 0,
+        bdatos: 0,
+        calcnum: 0,
+        invstop: 0,
+        ingsoft: 0,
+        actint: 0,
+        gestion: 0,
+        sociales: 0
+    };
+
+    // Recorremos todos los botones
     document.querySelectorAll('.btn').forEach((btn) => {
-        if ( btn.getAttribute("estado") === "exonerada") {
-            totalCreditos += parseInt(btn.getAttribute('creditos'));
+        const estado = btn.getAttribute("estado");
+        const creditos = parseInt(btn.getAttribute("creditos"));
+        const area = btn.getAttribute("area");
+
+        if (estado === "exonerada") {
+            totalCreditos += creditos;
+
+            if (area && creditosPorArea.hasOwnProperty(area)) {
+                creditosPorArea[area] += creditos;
+            }
         }
     });
+
+    // Actualizar el total de créditos
     document.getElementById("creditos").innerHTML = `Créditos totales: ${totalCreditos}`;
+
+    // Actualizar cada contador por área
+    for (const area in creditosPorArea) {
+        const elemento = document.getElementById(area);
+        if (elemento) {
+            elemento.textContent = creditosPorArea[area];
+        }
+    }
 };
+
 
 // Recorrer dependencias y habilitar/deshabilitar botones
 const recorrerDependencias = () => {
@@ -190,7 +234,8 @@ recorrerDependencias();
 function cargarDatos(){
     const exoneradas = [
         calculoDiv, gal1, matDiscreta1, calculoDivv, gal2, matDiscreta2,
-        prog1, logica, pye, prog2, prog3,prog4, tallerProg, economia, teoleng
+        prog1, logica, pye, prog2, prog3,prog4, tallerProg, economia, teoleng,
+        adminGI, progLogica
     ];
 
     exoneradas.forEach(elemento => {
@@ -198,7 +243,7 @@ function cargarDatos(){
     });
 
     const aprobadas = [
-        metNum, iio, arquitectura
+        metNum, iio, arquitectura, cts
     ];
 
     aprobadas.forEach(elemento => {

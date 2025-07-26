@@ -20,72 +20,78 @@
 
         <div id="opcionales">
         <div class="row" >
-            <button class="btn" id="fisica" estado="sin-cursar" creditos=10>Fisica</button>
-            <button class="btn" id="economia" estado="sin-cursar" creditos=7>Economia</button>
-            <button class="btn" id="cts" estado="sin-cursar" creditos=8>Ciencia, Tecnología y Sociedad</button>
+            <button class="btn" id="fisica" estado="sin-cursar"  creditos=10 area="ciencias">Fisica</button>
+            <button class="btn" id="economia" estado="sin-cursar" creditos=7 area="sociales">Economia</button>
+            <button class="btn" id="cts" estado="sin-cursar" creditos=8 area="sociales">Ciencia, Tecnología y Sociedad</button>
         </div>
 
         <div class="row" >
-            <button class="btn" id="adminGI" estado="sin-cursar" creditos=5>Administracion General para Ingenieros</button>
-            <button class="btn" id="practicaAdminGI" estado="sin-cursar" creditos=5  disabled>Practica de Administracion para Ingenieros</button>
-            <button class="btn" id="polCient" estado="sin-cursar" creditos=3>Politicas Cientificas en Inf. y Comp</button>
+            <button class="btn" id="adminGI" estado="sin-cursar" creditos=5 area="gestion">Administracion General para Ingenieros</button>
+            <button class="btn" id="practicaAdminGI" estado="sin-cursar" creditos=5 area="gestion"  disabled>Practica de Administracion para Ingenieros</button>
+            <button class="btn" id="polCient" estado="sin-cursar" creditos=3 area="sociales">Politicas Cientificas en Inf. y Comp</button>
         </div>
+
+        <div class="row" >
+            <button class="btn" id="dlogico" estado="sin-cursar" creditos=12 area="arqsisr">Diseño Logico</button>
+            <button class="btn" id="intmicro" estado="sin-cursar" creditos=11 area="arqsisr"  >Introduccion a los Microprocesadores</button>
+        </div>
+
         </div>
 
         <div class="separator"></div>
 
         <div id="obligatorias">
             <div class="row">
-                <button class="btn" id="calculoDiv" estado="sin-cursar" creditos=13>Cálculo D.I.V.</button>
-                <button class="btn" id="gal1" estado="sin-cursar" creditos=9>G.A.L. 1</button>
-                <button class="btn" id="matDiscreta1" estado="sin-cursar" creditos=9>Matemática Discreta 1</button>
+                <button class="btn" id="calculoDiv" estado="sin-cursar" creditos=13 area="mate">Cálculo D.I.V.</button>
+                <button class="btn" id="gal1" estado="sin-cursar" creditos=9 area="mate">G.A.L. 1</button>
+                <button class="btn" id="matDiscreta1" estado="sin-cursar" creditos=9 area="mate">Matemática Discreta 1</button>
                 
                 
             </div>
             <div class="row">
-                <button class="btn" id="calculoDivv" estado="sin-cursar" creditos=13  disabled>Cálculo D.I.V.V.</button>
-                <button class="btn" id="gal2" estado="sin-cursar" creditos=9  disabled>G.A.L. 2</button>
-                <button class="btn" id="matDiscreta2" estado="sin-cursar" creditos=9  disabled>Matemática Discreta 2</button>
-                <button class="btn sin-cursar" id="prog1" estado="sin-cursar" creditos=10  disabled>Programación 1</button>
-                
-            </div>
-
-
-            <div class="row">
-                <button class="btn" id="logica" estado="sin-cursar" creditos=12  disabled>Lógica</button>
-                <button class="btn" id="pye" estado="sin-cursar" creditos=10  disabled>Probabilidad y Estadística</button>
-                <button class="btn" id="prog2" estado="sin-cursar" creditos=12  disabled>Programación 2</button>
+                <button class="btn" id="calculoDivv" estado="sin-cursar" creditos=13 area="mate"  disabled >Cálculo D.I.V.V.</button>
+                <button class="btn" id="gal2" estado="sin-cursar" creditos=9 area="mate"  disabled>G.A.L. 2</button>
+                <button class="btn" id="matDiscreta2" estado="sin-cursar" creditos=9 area="mate"  disabled>Matemática Discreta 2</button>
+                <button class="btn sin-cursar" id="prog1" estado="sin-cursar" creditos=10  area="prog"  disabled>Programación 1</button>
                 
             </div>
 
+
             <div class="row">
-                <button class="btn" id="metNum" estado="sin-cursar" creditos=8  disabled>Métodos Numéricos</button>
-                <button class="btn" id="arquitectura" estado="sin-cursar" creditos=10  disabled>Arquitectura de Computadoras</button>
-                <button class="btn" id="prog3" estado="sin-cursar" creditos=15  disabled>Programación 3</button>
+                <button class="btn" id="logica" estado="sin-cursar" creditos=12 area="mate"  disabled>Lógica</button>
+                <button class="btn" id="pye" estado="sin-cursar" creditos=10 area="mate"  disabled>Probabilidad y Estadística</button>
+                <button class="btn" id="prog2" estado="sin-cursar" creditos=12 area="prog" disabled>Programación 2</button>
                 
-            </div>
-            <div class="row">
-                <button class="btn" id="sisop" estado="sin-cursar" creditos=12  disabled>Sistemas Operativos</button>
-                <button class="btn" id="iio" estado="sin-cursar" creditos=10  disabled>I.I.O</button>
-                <button class="btn" id="teoleng" estado="sin-cursar" creditos=12  disabled>Teoría de Lenguajes</button>
-                <button class="btn" id="prog4" estado="sin-cursar" creditos=15  disabled>Programación 4</button>
             </div>
 
             <div class="row">
-                <button class="btn" id="redes" estado="sin-cursar" creditos=12  disabled>Redes de Computadoras</button>
-                <button class="btn" id="bd" estado="sin-cursar" creditos=15  disabled>Bases de Datos</button>
-                <button class="btn" id="tallerProg" estado="sin-cursar" creditos=15  disabled>Taller de Programación</button>
+                <button class="btn" id="metNum" estado="sin-cursar" creditos=8 area="calcnum" disabled>Métodos Numéricos</button>
+                <button class="btn" id="arquitectura" estado="sin-cursar" creditos=10 area="arqsisr"  disabled>Arquitectura de Computadoras</button>
+                <button class="btn" id="prog3" estado="sin-cursar" creditos=15 area="prog"  disabled>Programación 3</button>
+                
+            </div>
+            <div class="row">
+                <button class="btn" id="sisop" estado="sin-cursar" creditos=12 area="arqsisr" disabled>Sistemas Operativos</button>
+                <button class="btn" id="iio" estado="sin-cursar" creditos=10 area="invstop"  disabled>I.I.O</button>
+                <button class="btn" id="teoleng" estado="sin-cursar" creditos=12 area="prog" disabled>Teoría de Lenguajes</button>
+                <button class="btn" id="prog4" estado="sin-cursar" creditos=15 area="prog" disabled>Programación 4</button>
+            </div>
+
+            <div class="row">
+                <button class="btn" id="redes" estado="sin-cursar" creditos=12 area="arqsisr" disabled>Redes de Computadoras</button>
+                <button class="btn" id="bd" estado="sin-cursar" creditos=15 area="bdatos" disabled>Bases de Datos</button>
+                <button class="btn" id="tallerProg" estado="sin-cursar" creditos=15 area="actint" disabled>Taller de Programación</button>
             
             </div>
             <div class="row">
-                <button class="btn" id="ingSoft" estado="sin-cursar" creditos=10  disabled>Ingeniería de Software</button>
-                <button class="btn" id="progLogica" estado="sin-cursar" creditos=10  disabled>Programación Lógica</button>
-                <button class="btn" id="intProgFuncional" estado="sin-cursar" creditos=10  disabled>Programación Funcional</button>
+                <button class="btn" id="ingSoft" estado="sin-cursar" creditos=10 area="ingsoft" disabled>Ingeniería de Software</button>
+                <button class="btn" id="progLogica" estado="sin-cursar" creditos=10 area="prog" disabled>Programación Lógica</button>
+                <button class="btn" id="intProgFuncional" estado="sin-cursar" creditos=10 area="prog" disabled>Programación Funcional</button>
                 
             </div>
             
             <div class="row">
-                <button class="btn" id="P.I.S" estado="sin-cursar" creditos=15  disabled>P.I.S</button>
+                <button class="btn" id="P.I.S" estado="sin-cursar" creditos=15 area="actint" disabled>P.I.S</button>
             </div>
             
         </div>
@@ -96,30 +102,39 @@
         </div>
     </div>
        
-    <div id="analista">
-       <b id="titleReq"> Requisitos para Analista en Sistemas</b>
-        <div id="analistaMaterias">
-            <p id="1">Calculo D.I.V & D.I.V.V</p>
-            <p id="2">GAL 1 & GAL2</p>
-            <p id="3">Matematica Discreta 1 & 2</p>
-            <p id="4">Logica</p>
+    <div id="creditosArea">
+            <h2>REQUERIMIENTOS INGENIERIO EN COMPUTACIÓN</h2>
+            <div id="Basicas">
+            <h3>MATEMATICA (min: 70 creditos) :</h3><p id="mate"> 0 </p>
+            <h3>CIENCIAS EXPERIMENTALES (min: 10 creditos) :</h3><p id="ciencias"> 0 </p>
+            </div>
 
-            <p id="5">Programacion 1,2,3,4 y Taller</p>
+            <div id="Basico-Tec">
+            <h3><b>PROGRAMACION (min: 60 creditos) :</b></h3><p id="prog"> 0 </p>
+            <h3><b>ARQUI, S.OP Y REDES DE COMPUTADORAS (min: 30 creditos) :</b></h3><p id="arqsisr"> 0 </p>
+            <h3><b>B.DATOS Y SIST. DE INFORMACION (min: 10 creditos) :</b></h3><p id="bdatos"> 0 </p>
+            <h3>CALCULO NUMERICO Y SIMBOLICO (min: 8 creditos) :</h3><p id="calcnum"> 0 </p>
+            <h3>INVESTIGACION OPERATIVA (min: 10 creditos) :</h3><p id="invstop"> 0 </p>
+            <h3>INGENIERIA DE SOFTWARE (min: 10 creditos) :</h3><p id="ingsoft"> 0 </p>
+            <h3><b>ACT. INTEGRALES,TALLERES, PASANTIAS Y PROYECTOS (min: 45 creditos) :</b></h3><p id="actint"> 0 </p>
+            <h3><b>GESTION EN ORGANIZACIONES (min: 10 creditos) :</b></h3><p id="gestion"> 0 </p>
+            </div>
 
-            <p id="6">Arquitectura Y Redes (10 Creditos Total )</p>
-            <p id="7">Sistemas Operativos</p>
+            <div id="materiasComplementarias">
+            <h3>CIENCIAS HUMANAS Y SOCIALES (min: 10 creditos) :</h3><p id="sociales"> 0 </p>
+            </div>
 
-            <p id="8">Base de Datos</p>
-            <p id="9">Teoria De Lenguajes</p>
-
-            <p id="10">Administracion General y Practica para Ingenieros</p>
-        </div>
+            <div id="analistaR">
+            <h4>Marcado en negrita los requerimientos de Analista en Computación</h4>
+            <h5>ACT. INTEGRALES,TALLERES, PASANTIAS Y PROYECTOS (min: 15 creditos) </h5>
+            </div>
     </div>
+    
 
     </div>
 
     <div class="footer">
-        <p>Desarrollado por Bruno Hernández &copy; 2024</p>
+        <p>Desarrollado por Bruno Hernández &copy; 2025</p>
     </div>
 
     <script src="javascript/materias.js"></script>
