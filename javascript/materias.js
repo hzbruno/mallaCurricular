@@ -119,15 +119,10 @@ const dependenciasCombinadas = {
         "aprobadas": [],
         "exoneradas": []
     },
-    "dlogico":{
+    "intlnat":{
         "aprobadas": [],
         "exoneradas": []
     },
-
-    "intmicro":{
-        "aprobadas": [],
-        "exoneradas": []
-    }
 
 };
 
@@ -146,7 +141,8 @@ const actualizarCreditos = () => {
         ingsoft: 0,
         actint: 0,
         gestion: 0,
-        sociales: 0
+        sociales: 0,
+        ia: 0
     };
 
     // Recorremos todos los botones
