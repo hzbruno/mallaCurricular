@@ -136,53 +136,138 @@
         </div>
        
         <div id="creditosArea" class="glass-panel">
-            <h2 class="summary-title">Resumen de Créditos</h2>
+            <h2 class="summary-title">Resumen de Créditos por Grupo</h2>
             
             <div class="summary-grid">
-                <div class="area-card" id="Basicas">
-                    <h4>Matemática</h4>
-                    <div class="progress-info"><span id="mate">0</span> / 70 min</div>
-                    
-                    <h4>Ciencias Exp.</h4>
-                    <div class="progress-info"><span id="ciencias">0</span> / 10 min</div>
+                
+                <div >
+                <div class="area-card"style="margin-bottom:24px" >
+                    <div class="card-header">
+                        <h3>Básicas</h3>
+                        <span class="group-badge">Mín. 80</span>
+                    </div>
+                    <div class="group-total">
+                        <span id="total-basicas">0</span> / 80
+                    </div>
+                    <hr class="divider">
+                    <div class="subject-list">
+                        <div class="subject-item">
+                            <h4>Matemática</h4>
+                            <div class="mini-progress"><span id="mate">0</span> / 70</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Ciencias Exp.</h4>
+                            <div class="mini-progress"><span id="ciencias">0</span> / 10</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="area-card" id="Basico-Tec">
-                    <h4 id="black-name">Programación</h4>
-                    <div class="progress-info"><span id="prog">0</span> / 60 min</div>
-                    
-                    <h4 id="black-name">Arqui, SO, Redes</h4>
-                    <div class="progress-info"><span id="arqsisr">0</span> / 30 min</div>
-                    
-                    <h4>Int. Artificial</h4>
-                    <div class="progress-info"><span id="ia">0</span> / 0 min</div>
-                    
-                    <h4 id="black-name">Base de Datos</h4>
-                    <div class="progress-info"><span id="bdatos">0</span> / 10 min</div>
-                    
-                    <h4>Cálculo Num.</h4>
-                    <div class="progress-info"><span id="calcnum">0</span> / 8 min</div>
-                    
-                    <h4>Inv. Operativa</h4>
-                    <div class="progress-info"><span id="invstop">0</span> / 10 min</div>
-                    
-                    <h4>Ing. Software</h4>
-                    <div class="progress-info"><span id="ingsoft">0</span> / 10 min</div>
-                    
-                    <h4>Talleres y Proy.</h4>
-                    <div class="progress-info"><span id="actint">0</span> / 45 min</div>
-                    
-                    <h4 id="black-name">Gestión</h4>
-                    <div class="progress-info"><span id="gestion">0</span> / 10 min</div>
+                <div class="area-card">
+                    <div class="card-header">
+                        <h3>Complementarias</h3>
+                        <span class="group-badge">Mín. 10</span>
+                    </div>
+                    <div class="group-total">
+                        <span id="total-complementarias">0</span> / 10
+                    </div>
+                    <hr class="divider">
+                    <div class="subject-list">
+                        <div class="subject-item">
+                            <h4>Sociales y Humanas</h4>
+                            <div class="mini-progress"><span id="sociales">0</span> / 10</div>
+                        </div>
+                    </div>
+                </div>
                 </div>
 
-                <div class="area-card" id="materiasComplementarias">
-                    <h4>Sociales</h4>
-                    <div class="progress-info"><span id="sociales">0</span> / 10 min</div>
+                <div class="area-card wide-card">
+                    <div class="card-header">
+                        <h3>Tecnológicas, Técnicas y Talleres</h3>
+                        <span class="group-badge">Mín. 220</span>
+                    </div>
+                    <div class="group-total">
+                        <span id="total-tecnicas">0</span> / 220
+                    </div>
+                    <p class="info-text">Suma de materias + 37 créditos electivos en el área</p>
+                    <hr class="divider">
                     
+                    <div class="subject-grid-internal">
+                        <div class="subject-item">
+                            <h4>Programación</h4>
+                            <div class="mini-progress"><span id="prog">0</span> / 60</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Arq, SO, Redes</h4>
+                            <div class="mini-progress"><span id="arqsisr">0</span> / 30</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Base de Datos</h4>
+                            <div class="mini-progress"><span id="bdatos">0</span> / 10</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Ing. Software</h4>
+                            <div class="mini-progress"><span id="ingsoft">0</span> / 10</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Gestión</h4>
+                            <div class="mini-progress"><span id="gestion">0</span> / 10</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Talleres y Proy.</h4>
+                            <div class="mini-progress"><span id="actint">0</span> / 45</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Inv. Operativa</h4>
+                            <div class="mini-progress"><span id="invstop">0</span> / 10</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Cálculo Num.</h4>
+                            <div class="mini-progress"><span id="calcnum">0</span> / 8</div>
+                        </div>
+                        <div class="subject-item">
+                            <h4>Int. Artificial</h4>
+                            <div class="mini-progress"><span id="ia">0</span> / 0</div>
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
         </div>
+
+        <h2 class="section-title">Progreso de Títulos</h2>
+            <div class="glass-panel">
+                
+                <div class="titulo-card">
+                    <div class="titulo-header">
+                        <h3>Analista en Computación</h3>
+                        <span id="estado-analista" class="badge-status">En curso</span>
+                    </div>
+                    <p class="desc-text">Requiere 270 créditos y mínimos específicos en Prog, Arq, BD, Gestión y Talleres.</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="bar-analista" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="creditos-analista">0</span> / 270 créditos
+                    </div>
+                    <ul id="requisitos-analista" class="req-list">
+                        </ul>
+                </div>
+
+                <div class="titulo-card" style="margin-top: 2rem;">
+                    <div class="titulo-header">
+                        <h3>Ingeniero en Computación</h3>
+                        <span id="estado-ingeniero" class="badge-status">En curso</span>
+                    </div>
+                    <p class="desc-text">Requiere 450 créditos totales y proyecto final.</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="bar-ingeniero" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="creditos-ingeniero">0</span> / 450 créditos
+                    </div>
+                </div>
+            </div>
 
     </div>
 
