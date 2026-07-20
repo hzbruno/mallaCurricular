@@ -1,128 +1,503 @@
-/* --- Variables & Reset (Tema Claro Suave) --- */
+/* ==========================================================================
+   Malla Curricular Interactiva — Tema Claro
+   ========================================================================== */
+
 :root {
     /* Fondos */
-    --bg-color: #f0f2f5;       /* Gris muy suave, no blanco total */
-    --bg-panel: #ffffff;       /* Paneles blancos */
-    --bg-panel-transparent: rgba(255, 255, 255, 0.90); /* Header semi-transparente */
-    
+    --bg-color: #f5f7fb;
+    --bg-panel: #ffffff;
+    --bg-panel-transparent: rgba(255, 255, 255, 0.85);
+    --bg-subtle: #f8fafc;
+    --bg-subtle-border: #e8edf4;
+
     /* Textos */
-    --text-primary: #1f2937;   /* Gris oscuro casi negro */
-    --text-secondary: #6b7280; /* Gris medio para subtítulos */
+    --text-primary: #1c2434;
+    --text-secondary: #64748b;
+    --text-tertiary: #94a3b8;
 
-    /* Branding (Azul profesional) */
-    --brand-color: #2563eb;
+    /* Branding */
+    --brand-color: #3b6ce7;
+    --brand-color-hover: #2f57c4;
     --brand-dark: #1e3a8a;
-    
-    /* Status Colors - Versiones Claras */
-    /* Pendiente: Gris suave */
-    --status-pending-bg: #f3f4f6;
-    --status-pending-text: #4b5563;
-    --status-pending-border: #e5e7eb;
-    
-    /* Aprobada: Azul claro */
-    --status-approved-bg: #eff6ff;
-    --status-approved-text: #2563eb;
-    --status-approved-border: #bfdbfe;
+    --brand-soft: #edf2fe;
+    --brand-ring: rgba(59, 108, 231, 0.30);
 
-    /* Exonerada: Verde claro */
-    --status-exonerated-bg: #f0fdf4;
-    --status-exonerated-text: #16a34a;
-    --status-exonerated-border: #bbf7d0;
+    /* Status: Pendiente */
+    --status-pending-bg: #ffffff;
+    --status-pending-text: #475569;
+    --status-pending-border: #dde4ee;
+    --status-pending-dot: #a3aec0;
 
-    /* Disabled: Gris apagado */
-    --status-disabled-bg: #f9fafb;
-    --status-disabled-text: #9ca3af;
-    --status-disabled-border: transparent; /* O borde muy sutil #f3f4f6 */
+    /* Status: Aprobada */
+    --status-approved-bg: #edf3ff;
+    --status-approved-text: #2b5bd7;
+    --status-approved-border: #b9ccf7;
+    --status-approved-dot: #3b6ce7;
+
+    /* Status: Exonerada */
+    --status-exonerated-bg: #eafaf0;
+    --status-exonerated-text: #15803d;
+    --status-exonerated-border: #ace4c1;
+    --status-exonerated-dot: #22a559;
+
+    /* Status: Bloqueada */
+    --status-disabled-bg: #f2f4f8;
+    --status-disabled-text: #aab3c2;
+    --status-disabled-border: #eaedf3;
+
+    /* Sombras */
+    --shadow-xs: 0 1px 2px rgba(28, 36, 52, 0.05);
+    --shadow-sm: 0 1px 3px rgba(28, 36, 52, 0.08), 0 1px 2px rgba(28, 36, 52, 0.04);
+    --shadow-md: 0 5px 14px -3px rgba(28, 36, 52, 0.12), 0 2px 5px -2px rgba(28, 36, 52, 0.06);
+    --shadow-lg: 0 14px 28px -8px rgba(28, 36, 52, 0.16), 0 4px 10px -4px rgba(28, 36, 52, 0.07);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    color-scheme: light;
 }
 
+* { box-sizing: border-box; }
+
+::selection { background: var(--brand-ring); }
+
+html { scroll-behavior: smooth; }
+
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
+    background-image:
+        radial-gradient(at 12% 0%, rgba(59, 108, 231, 0.07) 0px, transparent 50%),
+        radial-gradient(at 90% 10%, rgba(34, 165, 89, 0.05) 0px, transparent 45%);
+    background-attachment: fixed;
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.55;
     font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 { letter-spacing: -0.01em; }
+
+a { color: var(--brand-color); }
+
+:focus-visible {
+    outline: 2px solid var(--brand-color);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 /* --- Navigation --- */
 .navbar {
-    background: linear-gradient(135deg, var(--brand-dark), var(--brand-color));
+    background: linear-gradient(135deg, var(--brand-dark), var(--brand-color) 130%);
     color: white;
-    padding: 1rem 0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+    padding: 2.1rem 0 2.7rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: -1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 18% 130%, rgba(255,255,255,0.15), transparent 55%),
+        radial-gradient(circle at 85% -20%, rgba(255,255,255,0.08), transparent 45%);
+    pointer-events: none;
 }
 
 .nav-content {
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
+    position: relative;
+}
+
+.nav-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.6rem;
 }
 
 .navbar h1 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
     font-weight: 700;
 }
 
 .navbar .subtitle {
-    opacity: 0.9;
-    font-size: 0.9rem;
-    font-weight: 300;
+    display: inline-block;
+    opacity: 0.88;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-top: 0.35rem;
 }
 
-/* --- Layout Containers --- */
+/* --- Layout --- */
 .container {
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
-    font-size: 1.15rem;
+    font-size: 0.98rem;
     color: var(--text-secondary);
-    margin: 2rem 0 1rem 0;
-    font-weight: 600;
+    margin: 2.75rem 0 1.1rem 0;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-left: 4px solid var(--brand-color);
+    letter-spacing: 0.07em;
     padding-left: 1rem;
+    position: relative;
 }
 
-/* --- Light Panels (Cards) --- */
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--brand-color), var(--brand-dark));
+}
+
 .glass-panel {
     background: var(--bg-panel);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
     margin-bottom: 2rem;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--bg-subtle-border);
+    animation: fadeInUp 0.45s ease both;
 }
 
-/* --- Counter Styles (TALLERES) --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   LA MALLA — columnas por semestre
+   ========================================================================== */
+
+.malla-panel {
+    padding: 1.5rem 1.25rem 1.75rem;
+    background:
+        linear-gradient(var(--bg-panel), var(--bg-panel)) padding-box,
+        linear-gradient(135deg, var(--bg-subtle-border), #d5def0) border-box;
+    border: 1px solid transparent;
+}
+
+.malla-hint {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+    margin: 0 auto 1.4rem;
+    max-width: 640px;
+}
+
+/* Los semestres se apilan verticalmente, unidos por una línea de tiempo */
+.malla-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.semester-column {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 12px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--bg-subtle-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+}
+
+/* Conector vertical entre semestres */
+.semester-column:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 29px;
+    bottom: calc(-1.4rem - 1px);
+    height: calc(1.4rem + 2px);
+    width: 2px;
+    background: #d5def0;
+}
+
+.semester-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #d8e0ec;
+}
+
+.semester-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--brand-color);
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 800;
+    box-shadow: 0 0 0 4px var(--bg-subtle), 0 0 0 5px #d5def0;
+}
+
+/* ==========================================================================
+   TARJETAS DE MATERIA (.btn) — compartidas entre malla y opcionales
+   ========================================================================== */
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 78px;
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.86rem;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease,
+                background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+    background: var(--status-pending-bg);
+    color: var(--status-pending-text);
+    border: 1px solid var(--status-pending-border);
+    box-shadow: var(--shadow-xs);
+}
+
+/* Créditos: texto discreto en la base de la tarjeta */
+.btn::after {
+    content: attr(creditos) ' créditos';
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    transition: inherit;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-color);
+}
+
+.btn:active:not(:disabled) { transform: translateY(0); }
+
+/* Estado: Aprobada (curso aprobado, a examen) */
+.btn[estado="aprobada"] {
+    background: var(--status-approved-bg);
+    color: var(--status-approved-text);
+    border-color: var(--status-approved-border);
+}
+
+.btn[estado="aprobada"]::after {
+    content: attr(creditos) ' créditos · a examen';
+    color: var(--status-approved-text);
+    opacity: 0.75;
+}
+
+/* Estado: Exonerada */
+.btn[estado="exonerada"] {
+    background: var(--status-exonerated-bg);
+    color: var(--status-exonerated-text);
+    border-color: var(--status-exonerated-border);
+}
+
+.btn[estado="exonerada"]::after {
+    content: '✓  ' attr(creditos) ' créditos';
+    color: var(--status-exonerated-text);
+    opacity: 0.75;
+}
+
+/* Estado: Bloqueada (previas sin cumplir) */
+.btn:disabled {
+    background: var(--status-disabled-bg);
+    color: var(--status-disabled-text);
+    border-color: var(--status-disabled-border);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn:disabled::after {
+    content: '🔒 ' attr(creditos) ' créditos';
+    color: var(--status-disabled-text);
+}
+
+/* --- Opcionales: tarjetas en fila --- */
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 1.75rem;
+}
+
+.row:last-child { margin-bottom: 0; }
+
+.row .btn {
+    width: auto;
+    min-width: 175px;
+    max-width: 240px;
+    flex: 1 1 175px;
+}
+
+.group-label {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--brand-color);
+    margin: 0 auto 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 0.3rem 0.95rem;
+    background: var(--brand-soft);
+    border-radius: 50px;
+}
+
+/* ==========================================================================
+   STATUS CARD (contador sticky)
+   ========================================================================== */
+
+.status-card {
+    position: sticky;
+    top: 16px;
+    z-index: 100;
+    background: var(--bg-panel-transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.75rem 1.35rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--bg-subtle-border);
+}
+
+.status-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+#creditos {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+#creditos strong {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand-dark);
+    font-variant-numeric: tabular-nums;
+}
+
+.status-indicator {
+    display: flex;
+    gap: 1.1rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.dot { display: flex; align-items: center; }
+
+.dot::before {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.dot.pending::before { background-color: var(--status-pending-dot); }
+.dot.approved::before { background-color: var(--status-approved-dot); }
+.dot.exonerated::before { background-color: var(--status-exonerated-dot); }
+
+.global-progress-track {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #edf0f5;
+    border-radius: 6px;
+    border: 1px solid var(--bg-subtle-border);
+}
+
+.global-progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--brand-color), var(--brand-dark));
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.milestone-marker {
+    position: absolute;
+    top: -4px;
+    left: 60%; /* 270 de 450 créditos = título de Analista */
+    width: 2px;
+    height: 16px;
+    background: var(--text-tertiary);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   CONTADOR DE TALLERES
+   ========================================================================== */
+
 .counter-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
     padding: 1rem 2rem;
-    background: #f8fafc; /* Fondo muy sutil dentro de la tarjeta blanca */
+    background: var(--bg-subtle);
     border-radius: 50px;
     width: fit-content;
     margin: 0 auto;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--bg-subtle-border);
 }
 
 .btn-counter {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: 2px solid var(--brand-color);
     background: white;
     color: var(--brand-color);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -130,19 +505,17 @@ body {
     justify-content: center;
     transition: all 0.2s;
     line-height: 1;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-xs);
 }
 
 .btn-counter:hover {
     background: var(--brand-color);
     color: white;
-    transform: scale(1.1);
-    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px var(--brand-ring);
 }
 
-.btn-counter:active {
-    transform: scale(0.95);
-}
+.btn-counter:active { transform: scale(0.94); }
 
 .counter-display {
     display: flex;
@@ -152,150 +525,41 @@ body {
 }
 
 #displayTaller {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: 800;
     color: var(--text-primary);
     line-height: 1;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s;
 }
 
 .counter-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     color: var(--text-secondary);
     margin-top: 4px;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.06em;
 }
 
-/* --- Status Card (Sticky Credit Counter) --- */
-.status-card {
-    position: sticky;
-    top: 20px;
-    z-index: 100;
-    background: var(--bg-panel-transparent);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(255,255,255,0.5);
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+/* ==========================================================================
+   BOTÓN CARGAR DATOS
+   ========================================================================== */
 
-#creditos {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--brand-dark);
-    margin: 0;
-}
+#boton { margin: 1.5rem 0 2.5rem; }
 
-.status-indicator {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.85rem;
-}
-
-.dot {
-    display: flex;
-    align-items: center;
-}
-
-.dot::before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 6px;
-}
-
-.dot.pending::before { background-color: var(--text-secondary); opacity: 0.5; }
-.dot.approved::before { background-color: var(--status-approved-text); }
-.dot.exonerated::before { background-color: var(--status-exonerated-text); }
-
-/* --- Buttons (The Subjects) --- */
-.row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 2rem;
-}
-
-.semester-label {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-}
-
-.btn {
-    padding: 12px 18px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 150px;
-    max-width: 240px;
-    flex-grow: 1;
-    position: relative;
-    
-    /* Default: Sin Cursar */
-    background-color: var(--status-pending-bg);
-    color: var(--status-pending-text);
-    border: 1px solid var(--status-pending-border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-
-.btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border-color: #cbd5e1;
-    background-color: white;
-}
-
-/* State: Aprobada */
-.btn[estado="aprobada"] {
-    background-color: var(--status-approved-bg);
-    color: var(--status-approved-text);
-    border-color: var(--status-approved-border);
-    font-weight: 600;
-}
-
-/* State: Exonerada */
-.btn[estado="exonerada"] {
-    background-color: var(--status-exonerated-bg);
-    color: var(--status-exonerated-text);
-    border-color: var(--status-exonerated-border);
-    font-weight: 600;
-}
-
-/* State: Disabled */
-.btn:disabled {
-    background-color: var(--status-disabled-bg);
-    color: var(--status-disabled-text);
-    border-color: transparent;
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: 0.8;
-}
-
-/* --- Loader Button --- */
 #cargarDatos {
     background-color: var(--brand-color);
     color: white;
     padding: 12px 30px;
     border-radius: 50px;
     font-weight: 600;
+    font-size: 0.92rem;
+    font-family: inherit;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
-    transition: background 0.3s;
+    box-shadow: 0 4px 12px var(--brand-ring);
+    transition: background 0.2s, transform 0.18s;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -303,76 +567,167 @@ body {
 }
 
 #cargarDatos:hover {
-    background-color: var(--brand-dark);
+    background-color: var(--brand-color-hover);
+    transform: translateY(-1px);
 }
 
-/* --- Summary Area --- */
-.summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    margin-top: 1rem;
+#cargarDatos:active { transform: translateY(0); }
+
+#cargarDatos .icon {
+    display: inline-block;
+    transition: transform 0.4s ease;
 }
 
-.area-card {
-    background: #f8fafc; /* Card gris muy suave dentro del panel blanco */
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-}
+#cargarDatos:hover .icon { transform: rotate(-70deg); }
+
+/* ==========================================================================
+   RESUMEN DE CRÉDITOS
+   ========================================================================== */
 
 .summary-title {
     text-align: center;
     color: var(--brand-dark);
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 1.75rem;
 }
 
-#creditosArea h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 0.85rem;
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+@media (min-width: 800px) {
+    .wide-card { grid-column: span 2; }
+}
+
+.area-card {
+    background: var(--bg-subtle);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--bg-subtle-border);
+    box-shadow: var(--shadow-xs);
+    transition: box-shadow 0.2s ease;
+}
+
+.area-card:hover { box-shadow: var(--shadow-sm); }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 0.75rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.group-badge {
+    background: var(--brand-soft);
+    color: var(--brand-color);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.group-total {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.info-text {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
+    font-style: italic;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--bg-subtle-border);
+    margin: 1rem 0;
+}
+
+.subject-grid-internal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 22px;
+}
+
+.subject-list { display: flex; flex-direction: column; gap: 16px; }
+
+.subject-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.subject-item h4 {
+    margin: 0;
+    font-size: 0.78rem;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
+    font-weight: 600;
 }
 
-.progress-info {
-    font-size: 1.25rem;
+.mini-progress {
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
-.progress-info span {
-    color: var(--brand-color);
+.mini-max {
+    color: var(--text-tertiary);
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-left: 3px;
 }
 
-.info-box {
-    margin-top: 2rem;
-    background: #fffbeb;
-    border: 1px solid #fcd34d;
-    color: #92400e;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
+.mini-bar-track {
+    height: 6px;
+    background: white;
+    border: 1px solid var(--bg-subtle-border);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-/* --- Footer --- */
-.footer {
-    text-align: center;
-    padding: 3rem 0;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-top: 2rem;
-    border-top: 1px solid #e5e7eb;
+.mini-bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--brand-color), var(--brand-color-hover));
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
 }
 
-/* --- Títulos y Barras de Progreso --- */
+.mini-bar-fill.is-complete {
+    background: linear-gradient(90deg, var(--status-exonerated-dot), #34d178);
+}
+
+/* ==========================================================================
+   TÍTULOS (Analista / Ingeniero)
+   ========================================================================== */
+
 .titulo-card {
-    background: #f8fafc;
+    background: var(--bg-subtle);
     padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--bg-subtle-border);
 }
 
 .titulo-header {
@@ -380,12 +735,15 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .titulo-header h3 {
     margin: 0;
-    color: var(--brand-dark);
-    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 700;
 }
 
 .desc-text {
@@ -397,8 +755,9 @@ body {
 .progress-bar-container {
     width: 100%;
     height: 10px;
-    background-color: #e2e8f0;
-    border-radius: 5px;
+    background-color: white;
+    border: 1px solid var(--bg-subtle-border);
+    border-radius: 6px;
     overflow: hidden;
     margin-bottom: 0.5rem;
 }
@@ -406,23 +765,25 @@ body {
 .progress-bar {
     height: 100%;
     background: linear-gradient(90deg, var(--brand-color), var(--brand-dark));
-    transition: width 0.5s ease;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .progress-text {
     text-align: right;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
 }
 
 .badge-status {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-    background: var(--status-pending-bg);
-    color: var(--status-pending-text);
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    background: #eef1f5;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
 }
 
 .badge-status.completado {
@@ -436,126 +797,67 @@ body {
     margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .req-item {
-    font-size: 0.75rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-    background: #fee2e2; /* Rojo suave por defecto */
-    color: #991b1b;
-    border: 1px solid #fecaca;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-weight: 600;
+    background: #fdecec;
+    color: #c53030;
+    border: 1px solid #f8caca;
 }
 
 .req-item.ok {
-    background: #dcfce7; /* Verde suave */
-    color: #166534;
-    border: 1px solid #bbf7d0;
+    background: var(--status-exonerated-bg);
+    color: var(--status-exonerated-text);
+    border: 1px solid var(--status-exonerated-border);
 }
 
-/* --- Nuevos Estilos del Resumen --- */
-.summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    align-items: start;
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    color: var(--text-tertiary);
+    font-size: 0.82rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--bg-subtle-border);
 }
 
-/* Hacer que la tarjeta de Tecnológicas ocupe 2 columnas si hay espacio */
-@media (min-width: 800px) {
-    .wide-card {
-        grid-column: span 2;
-    }
-}
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
 
-.area-card {
-    background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.card-header h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: var(--brand-dark);
-}
-
-.group-badge {
-    background: #eff6ff;
-    color: var(--brand-color);
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-.group-total {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
-}
-
-.info-text {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    margin: 0 0 1rem 0;
-    font-style: italic;
-}
-
-.divider {
-    border: 0;
-    border-top: 1px solid #f1f5f9;
-    margin: 1rem 0;
-}
-
-/* Grid interno para materias técnicas */
-.subject-grid-internal {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas */
-    gap: 15px 20px;
-}
-
-.subject-item h4 {
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
-
-.mini-progress {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-/* --- Responsive --- */
 @media (max-width: 768px) {
-    .btn {
+    .navbar { padding: 1.75rem 0 2.2rem; }
+
+    .status-card { position: static; }
+
+    .status-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .row .btn {
         width: 100%;
         max-width: none;
-        margin: 4px 0;
-    }
-    
-    .status-card {
-        flex-direction: column;
-        text-align: center;
-        position: relative; 
-        top: 0;
+        flex-basis: 100%;
     }
 
-    .summary-grid {
-        grid-template-columns: 1fr;
-    }
+    .summary-grid { grid-template-columns: 1fr; }
+
+    .subject-grid-internal { grid-template-columns: 1fr; }
+
+    .glass-panel { padding: 1.25rem; }
+
+    .malla-panel { padding: 1.25rem 0.75rem; }
+}
+
+@media (max-width: 420px) {
+    #creditos strong { font-size: 1.25rem; }
 }

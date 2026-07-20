@@ -17,102 +17,119 @@
 
     <nav class="navbar">
         <div class="nav-content">
+            <span class="nav-eyebrow">Facultad de Ingeniería &middot; UdelaR</span>
             <h1>Ingeniería en Computación</h1>
             <span class="subtitle">Sistema de Previaturas</span>
         </div>
     </nav>
 
     <div class="container">
-        
+
         <div class="status-card">
-            <div id="creditos">Créditos totales: 0</div>
-            <div class="status-indicator">
-                <span class="dot pending">Pendiente</span>
-                <span class="dot approved">Aprobada</span>
-                <span class="dot exonerated">Exonerada</span>
+            <div class="status-main">
+                <div id="creditos">Créditos totales: <strong>0</strong> / 450</div>
+                <div class="status-indicator">
+                    <span class="dot pending">Pendiente</span>
+                    <span class="dot approved">Aprobada</span>
+                    <span class="dot exonerated">Exonerada</span>
+                </div>
+            </div>
+            <div class="global-progress-track">
+                <div class="global-progress-fill" id="creditos-bar-global" style="width: 0%"></div>
+                <span class="milestone-marker milestone-analista" title="Analista en Computación: 270 créditos"></span>
             </div>
         </div>
 
-        
+
+
+        <h2 class="section-title">Malla Curricular</h2>
+        <div id="obligatorias" class="glass-panel malla-panel">
+            <p class="malla-hint">Hacé clic en una materia para marcarla: pendiente → aprobada → exonerada. Las materias bloqueadas muestran sus previas al pasar el mouse.</p>
+            <div class="malla-scroll">
+                <div class="malla-grid">
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">1</span> Semestre</div>
+                        <button class="btn" id="calculoDiv" estado="sin-cursar" creditos=13 area="mate">Cálculo 1 (DIV)</button>
+                        <button class="btn" id="gal1" estado="sin-cursar" creditos=9 area="mate">GAL 1</button>
+                        <button class="btn" id="matDiscreta1" estado="sin-cursar" creditos=9 area="mate">Matemática Discreta 1</button>
+                    </div>
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">2</span> Semestre</div>
+                        <button class="btn" id="calculoDivv" estado="sin-cursar" creditos=13 area="mate" disabled>Cálculo 2 (DIVV)</button>
+                        <button class="btn" id="gal2" estado="sin-cursar" creditos=9 area="mate" disabled>GAL 2</button>
+                        <button class="btn" id="matDiscreta2" estado="sin-cursar" creditos=9 area="mate" disabled>Matemática Discreta 2</button>
+                        <button class="btn" id="prog1" estado="sin-cursar" creditos=10 area="prog" disabled>Programación 1</button>
+                    </div>
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">3</span> Semestre</div>
+                        <button class="btn" id="logica" estado="sin-cursar" creditos=12 area="mate" disabled>Lógica</button>
+                        <button class="btn" id="pye" estado="sin-cursar" creditos=10 area="mate" disabled>Probabilidad y Est.</button>
+                        <button class="btn" id="prog2" estado="sin-cursar" creditos=12 area="prog" disabled>Programación 2</button>
+                    </div>
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">4</span> Semestre</div>
+                        <button class="btn" id="metNum" estado="sin-cursar" creditos=8 area="calcnum" disabled>Métodos Numéricos</button>
+                        <button class="btn" id="arquitectura" estado="sin-cursar" creditos=10 area="arqsisr" disabled>Arquitectura Comp.</button>
+                        <button class="btn" id="prog3" estado="sin-cursar" creditos=15 area="prog" disabled>Programación 3</button>
+                    </div>
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">5</span> Semestre</div>
+                        <button class="btn" id="sisop" estado="sin-cursar" creditos=12 area="arqsisr" disabled>Sistemas Operativos</button>
+                        <button class="btn" id="iio" estado="sin-cursar" creditos=10 area="invstop" disabled>Investigación Op.</button>
+                        <button class="btn" id="teoleng" estado="sin-cursar" creditos=12 area="prog" disabled>Teoría de Lenguajes</button>
+                        <button class="btn" id="prog4" estado="sin-cursar" creditos=15 area="prog" disabled>Programación 4</button>
+                    </div>
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">6</span> Semestre</div>
+                        <button class="btn" id="redes" estado="sin-cursar" creditos=12 area="arqsisr" disabled>Redes de Comp.</button>
+                        <button class="btn" id="bd" estado="sin-cursar" creditos=15 area="bdatos" disabled>Base de Datos</button>
+                        <button class="btn" id="tallerProg" estado="sin-cursar" creditos=15 area="actint" disabled>Taller de Prog.</button>
+                    </div>
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">7</span> Semestre</div>
+                        <button class="btn" id="ingSoft" estado="sin-cursar" creditos=10 area="ingsoft" disabled>Ingeniería de Soft.</button>
+                        <button class="btn" id="progLogica" estado="sin-cursar" creditos=10 area="prog" disabled>Prog. Lógica</button>
+                        <button class="btn" id="intProgFuncional" estado="sin-cursar" creditos=10 area="prog" disabled>Prog. Funcional</button>
+                    </div>
+
+                    <div class="semester-column">
+                        <div class="semester-header"><span class="semester-num">8</span> Semestre</div>
+                        <button class="btn" id="P.I.S" estado="sin-cursar" creditos=15 area="actint" disabled>P.I.S</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <h2 class="section-title">Materias Opcionales</h2>
         <div id="opcionales" class="glass-panel">
+            <div class="group-label">Sociales, Ciencias e IA</div>
             <div class="row">
                 <button class="btn" id="intlnat" estado="sin-cursar" creditos=12 area="ia">Proc. Lenguaje Natural</button>
                 <button class="btn" id="fisica" estado="sin-cursar" creditos=10 area="ciencias">Física</button>
                 <button class="btn" id="economia" estado="sin-cursar" creditos=7 area="sociales">Economía</button>
                 <button class="btn" id="cts" estado="sin-cursar" creditos=8 area="sociales">Ciencia, Tec. y Sociedad</button>
             </div>
+            <div class="group-label">Gestión y Talleres</div>
             <div class="row">
                 <button class="btn" id="adminGI" estado="sin-cursar" creditos=5 area="gestion">Admin. Gral. Ingenieros</button>
                 <button class="btn" id="practicaAdminGI" estado="sin-cursar" creditos=5 area="gestion" disabled>Práctica Admin.</button>
                 <button class="btn" id="polCient" estado="sin-cursar" creditos=3 area="sociales">Políticas Científicas</button>
                 <button class="btn" id="teti" estado="sin-cursar" creditos=10 area="actint">TETI</button>
             </div>
+            <div class="group-label">Datos e Inteligencia Artificial</div>
             <div class="row">
                 <button class="btn" id="intDatos" estado="sin-cursar" creditos=8 area="bdatos">Integración de Datos</button>
-                <button class="btn" id="recInfo" estado="sin-cursar" creditos=9 area="bdatos" >Recuperación de información y recomendaciones en la web</button>
-                <button class="btn" id="bdNRel" estado="sin-cursar" creditos=3 area="bdatos">Base de datos no relacionales</button>
-                <button class="btn" id="modEst" estado="sin-cursar" creditos=6 area="ia">Modelos Estadisticos</button>
-            </div>
-        </div>
-
-        <h2 class="section-title">Malla Curricular</h2>
-        <div id="obligatorias" class="glass-panel">
-            <div class="semester-label">Semestre 1</div>
-            <div class="row">
-                <button class="btn" id="calculoDiv" estado="sin-cursar" creditos=13 area="mate">Cálculo 1 (DIV)</button>
-                <button class="btn" id="gal1" estado="sin-cursar" creditos=9 area="mate">GAL 1</button>
-                <button class="btn" id="matDiscreta1" estado="sin-cursar" creditos=9 area="mate">Matemática Discreta 1</button>
-            </div>
-            
-            <div class="semester-label">Semestre 2</div>
-            <div class="row">
-                <button class="btn" id="calculoDivv" estado="sin-cursar" creditos=13 area="mate" disabled>Cálculo 2 (DIVV)</button>
-                <button class="btn" id="gal2" estado="sin-cursar" creditos=9 area="mate" disabled>GAL 2</button>
-                <button class="btn" id="matDiscreta2" estado="sin-cursar" creditos=9 area="mate" disabled>Matemática Discreta 2</button>
-                <button class="btn" id="prog1" estado="sin-cursar" creditos=10 area="prog" disabled>Programación 1</button>
-            </div>
-
-            <div class="semester-label">Semestre 3</div>
-            <div class="row">
-                <button class="btn" id="logica" estado="sin-cursar" creditos=12 area="mate" disabled>Lógica</button>
-                <button class="btn" id="pye" estado="sin-cursar" creditos=10 area="mate" disabled>Probabilidad y Est.</button>
-                <button class="btn" id="prog2" estado="sin-cursar" creditos=12 area="prog" disabled>Programación 2</button>
-            </div>
-
-            <div class="semester-label">Semestre 4</div>
-            <div class="row">
-                <button class="btn" id="metNum" estado="sin-cursar" creditos=8 area="calcnum" disabled>Métodos Numéricos</button>
-                <button class="btn" id="arquitectura" estado="sin-cursar" creditos=10 area="arqsisr" disabled>Arquitectura Comp.</button>
-                <button class="btn" id="prog3" estado="sin-cursar" creditos=15 area="prog" disabled>Programación 3</button>
-            </div>
-
-            <div class="semester-label">Semestre 5</div>
-            <div class="row">
-                <button class="btn" id="sisop" estado="sin-cursar" creditos=12 area="arqsisr" disabled>Sistemas Operativos</button>
-                <button class="btn" id="iio" estado="sin-cursar" creditos=10 area="invstop" disabled>Investigación Op.</button>
-                <button class="btn" id="teoleng" estado="sin-cursar" creditos=12 area="prog" disabled>Teoría de Lenguajes</button>
-                <button class="btn" id="prog4" estado="sin-cursar" creditos=15 area="prog" disabled>Programación 4</button>
-            </div>
-
-            <div class="semester-label">Semestre 6</div>
-            <div class="row">
-                <button class="btn" id="redes" estado="sin-cursar" creditos=12 area="arqsisr" disabled>Redes de Comp.</button>
-                <button class="btn" id="bd" estado="sin-cursar" creditos=15 area="bdatos" disabled>Base de Datos</button>
-                <button class="btn" id="tallerProg" estado="sin-cursar" creditos=15 area="actint" disabled>Taller de Prog.</button>
-            </div>
-
-            <div class="semester-label">Semestre 7</div>
-            <div class="row">
-                <button class="btn" id="ingSoft" estado="sin-cursar" creditos=10 area="ingsoft" disabled>Ingeniería de Soft.</button>
-                <button class="btn" id="progLogica" estado="sin-cursar" creditos=10 area="prog" disabled>Prog. Lógica</button>
-                <button class="btn" id="intProgFuncional" estado="sin-cursar" creditos=10 area="prog" disabled>Prog. Funcional</button>
-            </div>
-            
-            <div class="semester-label">Semestre 8</div>
-            <div class="row">
-                <button class="btn" id="P.I.S" estado="sin-cursar" creditos=15 area="actint" disabled>P.I.S</button>
+                <button class="btn" id="recInfo" estado="sin-cursar" creditos=9 area="bdatos">Rec. de Información Web</button>
+                <button class="btn" id="bdNRel" estado="sin-cursar" creditos=3 area="bdatos">BD No Relacionales</button>
+                <button class="btn" id="modEst" estado="sin-cursar" creditos=6 area="ia">Modelos Estadísticos</button>
             </div>
         </div>
 
@@ -159,12 +176,18 @@
                     <hr class="divider">
                     <div class="subject-list">
                         <div class="subject-item">
-                            <h4>Matemática</h4>
-                            <div class="mini-progress"><span id="mate">0</span> / 70</div>
+                            <div class="subject-item-header">
+                                <h4>Matemática</h4>
+                                <div class="mini-progress"><span id="mate">0</span><span class="mini-max">/ 70</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-mate" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Ciencias Exp.</h4>
-                            <div class="mini-progress"><span id="ciencias">0</span> / 10</div>
+                            <div class="subject-item-header">
+                                <h4>Ciencias Exp.</h4>
+                                <div class="mini-progress"><span id="ciencias">0</span><span class="mini-max">/ 10</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-ciencias" style="width:0%"></div></div>
                         </div>
                     </div>
                 </div>
@@ -180,8 +203,11 @@
                     <hr class="divider">
                     <div class="subject-list">
                         <div class="subject-item">
-                            <h4>Sociales y Humanas</h4>
-                            <div class="mini-progress"><span id="sociales">0</span> / 10</div>
+                            <div class="subject-item-header">
+                                <h4>Sociales y Humanas</h4>
+                                <div class="mini-progress"><span id="sociales">0</span><span class="mini-max">/ 10</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-sociales" style="width:0%"></div></div>
                         </div>
                     </div>
                 </div>
@@ -200,40 +226,66 @@
                     
                     <div class="subject-grid-internal">
                         <div class="subject-item">
-                            <h4>Programación</h4>
-                            <div class="mini-progress"><span id="prog">0</span> / 60</div>
+                            <div class="subject-item-header">
+                                <h4>Programación</h4>
+                                <div class="mini-progress"><span id="prog">0</span><span class="mini-max">/ 60</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-prog" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Arq, SO, Redes</h4>
-                            <div class="mini-progress"><span id="arqsisr">0</span> / 30</div>
+                            <div class="subject-item-header">
+                                <h4>Arq, SO, Redes</h4>
+                                <div class="mini-progress"><span id="arqsisr">0</span><span class="mini-max">/ 30</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-arqsisr" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Base de Datos</h4>
-                            <div class="mini-progress"><span id="bdatos">0</span> / 10</div>
+                            <div class="subject-item-header">
+                                <h4>Base de Datos</h4>
+                                <div class="mini-progress"><span id="bdatos">0</span><span class="mini-max">/ 10</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-bdatos" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Ing. Software</h4>
-                            <div class="mini-progress"><span id="ingsoft">0</span> / 10</div>
+                            <div class="subject-item-header">
+                                <h4>Ing. Software</h4>
+                                <div class="mini-progress"><span id="ingsoft">0</span><span class="mini-max">/ 10</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-ingsoft" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Gestión</h4>
-                            <div class="mini-progress"><span id="gestion">0</span> / 10</div>
+                            <div class="subject-item-header">
+                                <h4>Gestión</h4>
+                                <div class="mini-progress"><span id="gestion">0</span><span class="mini-max">/ 10</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-gestion" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Talleres y Proy.</h4>
-                            <div class="mini-progress"><span id="actint">0</span> / 45</div>
+                            <div class="subject-item-header">
+                                <h4>Talleres y Proy.</h4>
+                                <div class="mini-progress"><span id="actint">0</span><span class="mini-max">/ 45</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-actint" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Inv. Operativa</h4>
-                            <div class="mini-progress"><span id="invstop">0</span> / 10</div>
+                            <div class="subject-item-header">
+                                <h4>Inv. Operativa</h4>
+                                <div class="mini-progress"><span id="invstop">0</span><span class="mini-max">/ 10</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-invstop" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Cálculo Num.</h4>
-                            <div class="mini-progress"><span id="calcnum">0</span> / 8</div>
+                            <div class="subject-item-header">
+                                <h4>Cálculo Num.</h4>
+                                <div class="mini-progress"><span id="calcnum">0</span><span class="mini-max">/ 8</span></div>
+                            </div>
+                            <div class="mini-bar-track"><div class="mini-bar-fill" id="bar-calcnum" style="width:0%"></div></div>
                         </div>
                         <div class="subject-item">
-                            <h4>Int. Artificial</h4>
-                            <div class="mini-progress"><span id="ia">0</span> / 0</div>
+                            <div class="subject-item-header">
+                                <h4>Int. Artificial</h4>
+                                <div class="mini-progress"><span id="ia">0</span><span class="mini-max">créditos</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>

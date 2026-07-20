@@ -32,10 +32,21 @@ const dependenciasCombinadas = {
     "cts":{ "aprobadas": [], "exoneradas": [] },
     "intlnat":{ "aprobadas": [], "exoneradas": [] },
     "teti":{"aprobadas": [], "exoneradas": [] },
-    "intDatos":{"aprobadas": [], "exoneradas": [] },
-    "recInfo":{"aprobadas": [], "exoneradas": [] },
-    "bdNRel":{"aprobadas": [], "exoneradas": [] },
-    "modEst":{"aprobadas": [], "exoneradas": [] },
+    // Previa: examen de Fundamentos de Bases de Datos (Anexo B - Ing. en Computación)
+    "intDatos":{"aprobadas": [], "exoneradas": ["bd"] },
+    // Previas exigidas: Bases de Datos, Análisis de algoritmos
+    "recInfo":{"aprobadas": ["bd", "prog3"], "exoneradas": [] },
+    // Previa: curso de Base de Datos (modelo relacional, transacciones, SQL)
+    "bdNRel":{"aprobadas": ["bd"], "exoneradas": [] },
+    // Previas: examen de Cálculo 2 (DIVV), GAL 2 y Probabilidad y Estadística
+    "modEst":{"aprobadas": [], "exoneradas": ["calculoDivv", "gal2", "pye"] },
+};
+
+/* Créditos máximos por área (usados para las mini-barras de progreso) */
+const maximosPorArea = {
+    mate: 70, ciencias: 10, prog: 60, arqsisr: 30, bdatos: 10,
+    calcnum: 8, invstop: 10, ingsoft: 10, actint: 45,
+    gestion: 10, sociales: 10, ia: 0
 };
 
 // Variable global para el contador manual
@@ -93,7 +104,12 @@ const actualizarCreditos = () => {
     // 4. Actualizar visualización del Total Global en el Header
     const credDisplay = document.getElementById("creditos");
     if(credDisplay) {
-        credDisplay.innerHTML = `Créditos totales: ${totalCreditos} / 450`;
+        credDisplay.innerHTML = `Créditos totales: <strong>${totalCreditos}</strong> / 450`;
+    }
+
+    const credBar = document.getElementById("creditos-bar-global");
+    if (credBar) {
+        credBar.style.width = `${Math.min((totalCreditos / 450) * 100, 100)}%`;
     }
 
     // 5. Calcular y Actualizar los 3 Grupos Principales (Plan 97)
@@ -114,11 +130,19 @@ const actualizarCreditos = () => {
     const totalCompl = creditosPorArea.sociales;
     actualizarIndicadorGrupo("total-complementarias", totalCompl, 10);
 
-    // 6. Actualizar contadores individuales
+    // 6. Actualizar contadores individuales y sus mini-barras de progreso
     for (const area in creditosPorArea) {
         const elemento = document.getElementById(area);
         if (elemento) {
             elemento.textContent = creditosPorArea[area];
+        }
+
+        const barra = document.getElementById(`bar-${area}`);
+        if (barra) {
+            const max = maximosPorArea[area] || 0;
+            const pct = max > 0 ? Math.min((creditosPorArea[area] / max) * 100, 100) : 0;
+            barra.style.width = `${pct}%`;
+            barra.classList.toggle('is-complete', max > 0 && creditosPorArea[area] >= max);
         }
     }
 
@@ -211,22 +235,30 @@ function calcularTitulos(totalCreditos, creditosPorArea) {
 const recorrerDependencias = () => {
     document.querySelectorAll('.btn').forEach(btn => {
         const id = btn.id;
-        if (!dependenciasCombinadas[id]) return;
-        
+        if (!dependenciasCombinadas[id]) {
+            btn.removeAttribute('title');
+            return;
+        }
+
         const dependencias = dependenciasCombinadas[id];
         let habilitada = true;
+        const faltantes = [];
 
         dependencias.aprobadas.forEach(dep => {
             const depBtn = document.getElementById(dep);
-            if (!(depBtn && (depBtn.getAttribute("estado") === "aprobada" || depBtn.getAttribute("estado") === "exonerada"))) {
+            const cumple = depBtn && (depBtn.getAttribute("estado") === "aprobada" || depBtn.getAttribute("estado") === "exonerada");
+            if (!cumple) {
                 habilitada = false;
+                if (depBtn) faltantes.push(depBtn.textContent.trim());
             }
         });
 
         dependencias.exoneradas.forEach(dep => {
             const depBtn = document.getElementById(dep);
-            if (!(depBtn && depBtn.getAttribute("estado")  === "exonerada")) {
+            const cumple = depBtn && depBtn.getAttribute("estado") === "exonerada";
+            if (!cumple) {
                 habilitada = false;
+                if (depBtn) faltantes.push(`${depBtn.textContent.trim()} (exonerada)`);
             }
         });
 
@@ -239,10 +271,12 @@ const recorrerDependencias = () => {
                     btn.setAttribute("estado", "sin-cursar");
                 }
             }
+            btn.removeAttribute('title');
         } else {
             if (!btn.disabled) {
                 btn.disabled = true;
             }
+            btn.title = `Requiere: ${faltantes.join(', ')}`;
         }
     });
 };
