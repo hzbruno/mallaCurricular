@@ -30,7 +30,12 @@ const dependenciasCombinadas = {
     "practicaAdminGI":{ "aprobadas": ["adminGI"], "exoneradas": [] },
     "polCient":{ "aprobadas": [], "exoneradas": [] },
     "cts":{ "aprobadas": [], "exoneradas": [] },
-    "intlnat":{ "aprobadas": [], "exoneradas": [] }
+    "intlnat":{ "aprobadas": [], "exoneradas": [] },
+    "teti":{"aprobadas": [], "exoneradas": [] },
+    "intDatos":{"aprobadas": [], "exoneradas": [] },
+    "recInfo":{"aprobadas": [], "exoneradas": [] },
+    "bdNRel":{"aprobadas": [], "exoneradas": [] },
+    "modEst":{"aprobadas": [], "exoneradas": [] },
 };
 
 // Variable global para el contador manual
@@ -306,7 +311,7 @@ function cargarDatos(){
     const exoneradas = [
         "calculoDiv", "gal1", "matDiscreta1", "calculoDivv", "gal2", "matDiscreta2",
         "prog1", "logica", "pye", "prog2", "prog3","prog4", "tallerProg", "economia", "teoleng",
-        "adminGI", "progLogica", "arquitectura","practicaAdminGI", "intlnat", "bd", "metNum", "intProgFuncional", "cts", "polCient"
+        "adminGI", "progLogica", "arquitectura","practicaAdminGI", "intlnat", "bd", "metNum", "intProgFuncional", "cts", "polCient","iio","ingSoft","teti"
     ];
 
     exoneradas.forEach(id => {
@@ -314,13 +319,13 @@ function cargarDatos(){
         if(el) actualizarClase(el, "exonerada");
     });
 
-    const aprobadas = [ "iio" ];
+    const aprobadas = [ "sisop" ];
     aprobadas.forEach(id => {
         const el = document.getElementById(id);
         if(el) actualizarClase(el, "aprobada");
     });
 
-    creditosTalleres = 4; 
+    creditosTalleres = 14; 
     actualizarDisplayTaller();
 
     actualizarCreditos();
